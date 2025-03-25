@@ -1,0 +1,137 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(195deg, #f5f3f8, #bdc2f2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 400px;
+            min-height: 400px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgb(68, 68, 218);
+            perspective: 1000px;
+            
+        }
+        
+
+        .form-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+
+        .container.flip .form-container {
+            transform: rotateY(180deg);
+        }
+
+        .form-box {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            padding: 40px;
+        }
+
+        .signup-box {
+            transform: rotateY(180deg);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in;
+            animation-delay: 0.2s;
+            animation-fill-mode: both;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid #333;
+            outline: none;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .input-box label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            color: #666;
+            pointer-events: none;
+            transition: 0.3s;
+        }
+
+        .input-box input:focus ~ label,
+        .input-box input:valid ~ label {
+            top: -20px;
+            font-size: 12px;
+            color: #6228bf;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #4203a9, #3e78dc);
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            
+            
+            transform: scale(1.06);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .toggle-link a {
+            color: #4203a9;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .toggle-link a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
